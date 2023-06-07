@@ -1,5 +1,6 @@
 name: Build RPM
 on:
+  push:
   workflow_dispatch:
     inputs:
       version:
