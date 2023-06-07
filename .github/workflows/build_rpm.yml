@@ -23,16 +23,21 @@ jobs:
       uses: actions/checkout@v3.1.0
     - name: Install Dependencies
       run: dnf install -y rpmdevtools sed
-    - name: Build RPM
+    - name: Setup Build Environment
       run: |
         rm -rf ~/rpmbuild/
         rpmdev-setuptree
         cp -r SPECS/* ~/rpmbuild/SPECS/
         cp -r SOURCES/* ~/rpmbuild/SOURCES/
-        rpmbuild -bs ~/rpmbuild/SPECS/ppos-repos-ostree.spec
-        rpmbuild -bb ~/rpmbuild/SPECS/ppos-repos-ostree.spec
+    - name: Set Version
+      if: ${{ inputs.release }}
+      run: |
         sed -i 's/\(Version:[[:space:]]*\)[0-9]\{1,\}/\1${{ inputs.version }}/g' ~/rpmbuild/SPECS/ppos-repos-ostree.spec
         sed -i 's/\(Release:[[:space:]]*\)[0-9]\{1,\}/\1${{ inputs.release }}/g' ~/rpmbuild/SPECS/ppos-repos-ostree.spec
+    - name: Build RPM
+      run: |
+        rpmbuild -bs ~/rpmbuild/SPECS/ppos-repos-ostree.spec
+        rpmbuild -bb ~/rpmbuild/SPECS/ppos-repos-ostree.spec
     - name: Archive Source RPM Artifacts
       uses: actions/upload-artifact@v3
       with:
