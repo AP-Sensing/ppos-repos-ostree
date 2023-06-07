@@ -1,7 +1,7 @@
 BuildArch:     noarch
 Name:          ppos-repos-ostree
 Version:       38
-Release:       1
+Release:       0
 License:       GPLv3
 Group:         Unspecified
 Summary:       OSTree specific files for PhotonPonyOS
