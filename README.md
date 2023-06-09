@@ -41,6 +41,6 @@ sudo dnf install rpm-sign
 Follow these instructions for setting up a signing gpg key: https://access.redhat.com/articles/3359321
 Then run the following commands for signing all (source-)rpms.
 ```bash
-rpm --addsign ~/rpmbuild/SRPMS/*.rpm
-rpm --addsign ~/rpmbuild/RPMS/*.rpm
+rpm --addsign ~/rpmbuild/SRPMS/**.rpm
+rpm --addsign ~/rpmbuild/RPMS/**/*.rpm
 ```
