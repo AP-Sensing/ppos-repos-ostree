@@ -12,6 +12,7 @@ Vendor:        AP Sensing
 Packager:      AP Sensing
 Provides:      ppos-repos-ostree = %{version}-%{release}
 Requires:      system-release(%{version})
+Requires:      ppos-repos == %{version}
 
 Source1: ppos-compose.conf
 
