@@ -5,7 +5,7 @@ Release:       0
 License:       GPLv3
 Group:         Unspecified
 Summary:       OSTree specific files for PhotonPonyOS
-Distribution:  AP Sensing
+Distribution:  PhotonPonyOS
 
 URL:           hhttps://github.com/AP-Sensing/ppos-repos-ostree/tree/ppos38
 Vendor:        AP Sensing
