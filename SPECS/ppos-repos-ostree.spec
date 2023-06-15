@@ -1,7 +1,7 @@
 BuildArch:     noarch
 Name:          ppos-repos-ostree
 Version:       38
-Release:       1
+Release:       2
 License:       GPLv3
 Group:         Unspecified
 Summary:       OSTree specific files for PhotonPonyOS
@@ -35,3 +35,5 @@ install -m 644 %{_sourcedir}/ppos-compose.conf $RPM_BUILD_ROOT/etc/ostree/remote
 %changelog
 * Wed Jun 07 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 38-1
 - Initial release
+* Thu Jun 15 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 38-2
+- Using https for the repo
